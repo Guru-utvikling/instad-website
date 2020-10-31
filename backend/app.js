@@ -1,8 +1,14 @@
 require('dotenv').config()
 const express = require('express');
 const morgan = require('morgan');
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const cors = require('cors');
+//const expressValidator = require('express-validator');
 //import routes
-
+const authRoutes = require('./routes/auth');
+//const jobRoutes = require('./routes/jobs');
+//const candiateRoutes = require('./routes/candidates')
 //app
 const app = express();
 //Connecting to mongoDB Atlas 
@@ -14,8 +20,15 @@ const app = express();
 
 //middlewares
 app.use(morgan('dev'))
-//routes middleware
+app.use(bodyParser.json())
+app.use(cookieParser())
+//app.use(expressValidator())
+app.use(cors());
 
+//routes middleware
+/*app.use('/api',authRoutes)
+app.use('/api',jobRoutes)
+app.use('/api',candiateRoutes) */
 //PORT
 const port = process.env.PORT || 8000
 app.listen(port, ()=>{
