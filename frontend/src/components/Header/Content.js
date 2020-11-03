@@ -1,7 +1,7 @@
 import React from 'react';
 import {Grid, Box, Button} from '@material-ui/core/'
 import { makeStyles } from '@material-ui/core/styles';
-
+import Buttons from '../../components/Buttons/Buttons'
 
 
 
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
   wrapper:{
     boxSizing: 'border-box',
-    padding: theme.spacing(0,10),
+    padding: theme.spacing(0,20),
       [theme.breakpoints.down('sm')]: {
         padding: theme.spacing(0,5),
       }
@@ -67,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
     },
     fontWeight:"900",
     color:"white",
+    lineHeight: "4rem"
   }
 }));
 
@@ -84,13 +85,12 @@ export default function MainHeaderContent() {
             We are a staffing company that is specialized in the areas of building and industrial construction and installation. The company invests in the best and latest innovative technological solutions available on the market to make things easier and less complicated, for both our employees and customers.
           </p>
           <div>
-            <Button size="large" className={classes.yellowButton} href="/register/cv">Register your CV</Button>  
+            <Buttons/>
             <Button size="large" className={classes.whiteButton} href="mailto:damian@guru-utvikling.no">Project inquiries</Button>
           </div>      
         </Grid>
       </Grid>
     </Box>
-
   );
 }
 

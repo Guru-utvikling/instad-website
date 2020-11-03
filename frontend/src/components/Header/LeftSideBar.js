@@ -102,7 +102,7 @@ function Navigator(props) {
               </ListItemText>
             </ListItem>
             {children.map(({ id: childId, icon, active, slug }) => (
-              <Link className={classes.menuLink} to={url_LINK + slug}>
+              <Link key={id} className={classes.menuLink} to={url_LINK + slug}>
                 <ListItem
                   key={childId}
                   button

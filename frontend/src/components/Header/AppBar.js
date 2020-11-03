@@ -14,6 +14,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'gatsby';
 import clsx from 'clsx';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const NavLinks = [
   {
@@ -48,6 +49,42 @@ const styles = (theme) => ({
   },
   appbarSmall:{
       flexDirection:"row",
+      alignItems:'center'
+  },
+  hamwrapper:{
+    display:"flex",
+    justify:"center",
+    alignContent:'center'
+  },
+  loginWrapper:{
+    display: "flex",
+    alignItems:'center',
+    justifyItems:"center",
+    flexDirection:'row',
+    marginRight: theme.spacing(2),
+    color:"black",
+    textDecoration:"none",
+    margin:"20px",
+    padding:"0 20px 0 20px",
+    border:'1px solid black',
+    [theme.breakpoints.down('md')]: {
+      margin:"10px",
+      padding:"0 20px 0 20px",
+      fontSize:".7rem"
+    },
+    '&:after':{
+      content: "Log in",
+      display:"block",
+      height:"16px",
+      color:"red",
+      width:"100px"
+    }
+  },
+  loginIcon:{
+    marginRight:theme.spacing(.5),
+    [theme.breakpoints.down('md')]: {
+      fontSize:"1rem" ,
+    }
   }
 });
 
@@ -92,7 +129,11 @@ function Header(props) {
                 </Hidden> */}
 
             <Hidden >
-              <Grid item  alignContent="center">
+              <Grid item  className={classes.hamwrapper} alignContent="center">
+                <Link to="login" className={classes.loginWrapper}>
+                <AccountCircleIcon  className={classes.loginIcon}/>
+                  <p>Log in</p>
+                </Link>
                 <IconButton
                   color="black"
                   aria-label="open drawer"
@@ -105,23 +146,6 @@ function Header(props) {
             </Hidden>
           </Grid>
         </Toolbar>
-      </AppBar>
-      <AppBar
-        component="div"
-        className={classes.secondaryBar}
-        color="primary"
-        position="static"
-        elevation={0}
-      >
-        
-      </AppBar>
-      <AppBar
-        component="div"
-        className={classes.secondaryBar}
-        color="primary"
-        position="static"
-        elevation={0}
-      >
       </AppBar>
     </React.Fragment>
   );

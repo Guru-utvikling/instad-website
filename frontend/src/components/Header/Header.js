@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import { createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
-import Box from '@material-ui/core/Box'
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import LeftSideBar from './LeftSideBar';
 import Content from './Content'
 import AppBar from './AppBar'
 import Image from '../../../static/instad-bg.png'
 
 let theme = createMuiTheme({
+
   palette: {
     primary: {
       light: '#63ccff',
@@ -26,6 +24,9 @@ let theme = createMuiTheme({
       fontSize: 26,
       letterSpacing: 0.5,
     },
+    p:{
+      fontSize: 16,
+    }
   },
   shape: {
     borderRadius: 8,
@@ -129,12 +130,24 @@ const drawerWidth = 256;
 const styles = {
   root: {
     display: 'flex',
-    minHeight: '100vh',
+    minHeight: '90vh',
     alignContent: 'start',
     flexDirection: "column",
     boxSizing: 'border-box',
     backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${Image})`,
     backgroundSize: "cover",
+  },
+  yellowButton:{
+    backgroundColor: "#fed700",
+    padding:"1rem",
+    borderRadius:"3px",
+    marginRight: "1rem",
+    [theme.breakpoints.down('md')]: {
+      fontSize:".8rem" ,
+    },
+    '&:hover': {
+      background: "#dcb500",
+    }
   },
   drawer: {
     [theme.breakpoints.up('sm')]: {
