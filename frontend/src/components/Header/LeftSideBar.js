@@ -15,16 +15,18 @@ import PublicIcon from '@material-ui/icons/Public';
 import SettingsEthernetIcon from '@material-ui/icons/SettingsEthernet';
 import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponent';
 import Logo from '../../../static/instad-logo.png'
+import { Link } from 'gatsby';
+const url_LINK = 'http://localhost:8000/'
 const categories = [
   {
     id: 'Develop',
     children: [
-      { id: 'Om oss', icon: <PeopleIcon />, active: true },
-      { id: 'Tjenester', icon: <DnsRoundedIcon /> },
-      { id: 'Ledige stillinger ', icon: <PermMediaOutlinedIcon /> },
-      { id: 'Events', icon: <PublicIcon /> },
-      { id: 'Blogg', icon: <SettingsEthernetIcon /> },
-      { id: 'Kontakt oss', icon: <SettingsInputComponentIcon /> },
+      { id: 'Om oss', icon: <PeopleIcon />, active: true, slug:'om-oss' },
+      { id: 'Tjenester', icon: <DnsRoundedIcon />, slug:'tjenester' },
+      { id: 'Ledige stillinger ', icon: <PermMediaOutlinedIcon />,slug:'ledige-stillinger' },
+      { id: 'Events', icon: <PublicIcon />, slug:'events' },
+      { id: 'Blogg', icon: <SettingsEthernetIcon />, slug:'blogg' },
+      { id: 'Kontakt oss', icon: <SettingsInputComponentIcon />, slug:'kontakt-oss' },
     ],
   },
 ];
@@ -72,15 +74,22 @@ const styles = (theme) => ({
   divider: {
     marginTop: theme.spacing(2),
   },
+  menuLink: {
+    color:"inherit",
+    textDecoration: 'none'
+  }
 });
 
 function Navigator(props) {
   const { classes, ...other } = props;
 
   return (
-    <Drawer variant="permanent" {...other}>
+    <Drawer anchor="left" variant="permanent" {...other}>
       <List className={classes.mainlist} disablePadding>
+        <Link to={url_LINK}>
           <img width={140} height={147} src={Logo} alt="instad-logo"/>
+        </Link>
+          
         {categories.map(({ id, children }) => (
           <React.Fragment key={id}>
             <ListItem className={classes.categoryHeader}>
@@ -92,12 +101,13 @@ function Navigator(props) {
                 {id}
               </ListItemText>
             </ListItem>
-            {children.map(({ id: childId, icon, active }) => (
-              <ListItem
-                key={childId}
-                button
-                className={clsx(classes.item, active && classes.itemActiveItem)}
-              >
+            {children.map(({ id: childId, icon, active, slug }) => (
+              <Link className={classes.menuLink} to={url_LINK + slug}>
+                <ListItem
+                  key={childId}
+                  button
+                  className={clsx(classes.item, active && classes.itemActiveItem)}
+                >
                 <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
                 <ListItemText
                   classes={{
@@ -107,6 +117,7 @@ function Navigator(props) {
                   {childId}
                 </ListItemText>
               </ListItem>
+            </Link>
             ))}
           </React.Fragment>
         ))}

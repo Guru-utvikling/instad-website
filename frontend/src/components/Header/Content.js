@@ -1,7 +1,7 @@
 import React from 'react';
 import {Grid, Box, Button} from '@material-ui/core/'
 import { makeStyles } from '@material-ui/core/styles';
-import Image from '../../../static/instad-bg.png'
+
 
 
 
@@ -10,20 +10,34 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     margin:'0',
     fontFamily: 'Calibri, sans-serif;',
+    
   },
-  buttons:{
-    yellow:{
-      backgroundColor:"green",
+  yellowButton:{
+    backgroundColor: "#fed700",
+    padding:"1rem",
+    borderRadius:"3px",
+    marginRight: "1rem",
+    [theme.breakpoints.down('md')]: {
+      fontSize:".8rem" ,
     },
-    white:{
-      backgroundColor:"white",
+    '&:hover': {
+      background: "#dcb500",
+    }
+  },
+  whiteButton:{
+    backgroundColor:"white",
+    padding:"1rem",
+    borderRadius:"3px",
+    '&:hover': {
+      background: "#f5f5f5",
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize:".8rem" ,
     }
   },
 
   wrapper:{
     boxSizing: 'border-box',
-    backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${Image})`,
-    backgroundSize: "cover",
     padding: theme.spacing(0,10),
       [theme.breakpoints.down('sm')]: {
         padding: theme.spacing(0,5),
@@ -40,13 +54,19 @@ const useStyles = makeStyles((theme) => ({
     fontWeight:"400",
     color:"#fff",
     textAlign:"justify",
-    textOverflow: "ellipsis"
+    textOverflow: "ellipsis",
+    [theme.breakpoints.down('md')]: {
+      fontSize:"1rem" ,
+    }
   },
   title:{
     fontSize:"4rem",
+    [theme.breakpoints.down('md')]: {
+      fontSize:"3rem" ,
+      lineHeight: "3rem"
+    },
     fontWeight:"900",
     color:"white",
-    lineHeight: "5rem"
   }
 }));
 
@@ -64,8 +84,8 @@ export default function MainHeaderContent() {
             We are a staffing company that is specialized in the areas of building and industrial construction and installation. The company invests in the best and latest innovative technological solutions available on the market to make things easier and less complicated, for both our employees and customers.
           </p>
           <div>
-            <Button size="large" className={classes.buttons.yellow} href="/register/cv">Register your CV</Button>  
-            <Button size="large" className={classes.buttons.white} href="mailto:damian@guru-utvikling.no">Project inquiries</Button>
+            <Button size="large" className={classes.yellowButton} href="/register/cv">Register your CV</Button>  
+            <Button size="large" className={classes.whiteButton} href="mailto:damian@guru-utvikling.no">Project inquiries</Button>
           </div>      
         </Grid>
       </Grid>

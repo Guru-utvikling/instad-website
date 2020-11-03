@@ -9,6 +9,7 @@ import Link from '@material-ui/core/Link';
 import LeftSideBar from './LeftSideBar';
 import Content from './Content'
 import AppBar from './AppBar'
+import Image from '../../../static/instad-bg.png'
 
 let theme = createMuiTheme({
   palette: {
@@ -58,7 +59,7 @@ theme = {
       contained: {
         boxShadow: 'none',
         '&:active': {
-          boxShadow: 'none',
+          boxShadow: '',
         },
       },
     },
@@ -129,6 +130,11 @@ const styles = {
   root: {
     display: 'flex',
     minHeight: '100vh',
+    alignContent: 'start',
+    flexDirection: "column",
+    boxSizing: 'border-box',
+    backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${Image})`,
+    backgroundSize: "cover",
   },
   drawer: {
     [theme.breakpoints.up('sm')]: {
@@ -151,11 +157,17 @@ const styles = {
   },
   main: {
     flex: 1,
+    padding: theme.spacing(0)
   },
   footer: {
     padding: theme.spacing(2),
     background: '#eaeff1',
   },
+  navigation:{
+    justifyItems:'center',
+    display:"flex",
+    alignContent:"center"
+  }
 };
 
 function Paperbase(props) {
@@ -170,8 +182,9 @@ function Paperbase(props) {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <CssBaseline />
-        <nav className={classes.drawer}>
-          <Hidden smUp implementation="js">
+        <nav className={classes.navigation}>
+          <AppBar position="sticky" className={classes.bar} onDrawerToggle={handleDrawerToggle} />
+          <Hidden implementation="js">
             <LeftSideBar
               PaperProps={{ style: { width: drawerWidth } }}
               variant="temporary"
@@ -179,14 +192,8 @@ function Paperbase(props) {
               onClose={handleDrawerToggle}
             />
           </Hidden>
-          <Hidden xsDown implementation="css">
-            <LeftSideBar PaperProps={{ style: { width: drawerWidth } }} />
-          </Hidden>
         </nav>
         <div className={classes.app}>
-          <Box display={{ xs: "block", sm: "none" }}>
-            <AppBar className={classes.bar} onDrawerToggle={handleDrawerToggle} />
-          </Box>
           <main className={classes.main}>
             <Content/>
           </main>
@@ -201,3 +208,17 @@ Paperbase.propTypes = {
 };
 
 export default withStyles(styles)(Paperbase);
+
+
+
+         {/* <Hidden smUp implementation="js">
+            <LeftSideBar
+              PaperProps={{ style: { width: drawerWidth } }}
+              variant="temporary"
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+            />
+          </Hidden>
+          <Hidden xsDown implementation="css">
+            <LeftSideBar PaperProps={{ style: { width: drawerWidth } }} />
+        </Hidden> */}
