@@ -9,3 +9,7 @@ export const getAllCandidates  = () => {
       })
       .catch(err => console.log(err));
 };
+
+ export  const submitSearch = ( data ) => {
+    //console.log(data)
+ }
