@@ -1,21 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Hidden from '@material-ui/core/Hidden';
-import LeftSideBar from './LeftSideBar';
-import Content from './Content'
-import AppBar from './AppBar'
-import Image from '../../../static/instad-bg.png'
+import React from "react";
+import PropTypes from "prop-types";
+import {
+  createMuiTheme,
+  ThemeProvider,
+  withStyles,
+} from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Hidden from "@material-ui/core/Hidden";
+import LeftSideBar from "./LeftSideBar";
+import Content from "./Content";
+import AppBar from "./AppBar";
+import Image from "../../../static/instad-bg.png";
 
 let theme = createMuiTheme({
-
   palette: {
     primary: {
-      light: '#63ccff',
-      main: '#009be5',
-      dark: '#006db3',
-      instad: '#FED800'
+      light: "#63ccff",
+      main: "#009be5",
+      dark: "#006db3",
+      instad: "#FED800",
     },
   },
   typography: {
@@ -24,9 +27,9 @@ let theme = createMuiTheme({
       fontSize: 26,
       letterSpacing: 0.5,
     },
-    p:{
+    p: {
       fontSize: 16,
-    }
+    },
   },
   shape: {
     borderRadius: 8,
@@ -53,14 +56,14 @@ theme = {
     },
     MuiButton: {
       padding: "2rem",
-      
+
       label: {
-        textTransform: 'none',
+        textTransform: "none",
       },
       contained: {
-        boxShadow: 'none',
-        '&:active': {
-          boxShadow: '',
+        boxShadow: "none",
+        "&:active": {
+          boxShadow: "",
         },
       },
     },
@@ -77,11 +80,11 @@ theme = {
     },
     MuiTab: {
       root: {
-        textTransform: 'none',
-        margin: '0 16px',
+        textTransform: "none",
+        margin: "0 16px",
         minWidth: 0,
         padding: 0,
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up("md")]: {
           padding: 0,
           minWidth: 0,
         },
@@ -99,7 +102,7 @@ theme = {
     },
     MuiDivider: {
       root: {
-        backgroundColor: '#404854',
+        backgroundColor: "#404854",
       },
     },
     MuiListItemText: {
@@ -109,9 +112,9 @@ theme = {
     },
     MuiListItemIcon: {
       root: {
-        color: 'inherit',
+        color: "inherit",
         marginRight: 0,
-        '& svg': {
+        "& svg": {
           fontSize: 20,
         },
       },
@@ -129,58 +132,57 @@ const drawerWidth = 256;
 
 const styles = {
   root: {
-    display: 'flex',
-    minHeight: '90vh',
-    alignContent: 'start',
+    display: "flex",
+    minHeight: "90vh",
+    alignContent: "start",
     flexDirection: "column",
-    boxSizing: 'border-box',
+    boxSizing: "border-box",
     backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${Image})`,
     backgroundSize: "cover",
   },
-  yellowButton:{
+  yellowButton: {
     backgroundColor: "#fed700",
-    padding:"1rem",
-    borderRadius:"3px",
+    padding: "1rem",
+    borderRadius: "3px",
     marginRight: "1rem",
-    [theme.breakpoints.down('md')]: {
-      fontSize:".8rem" ,
+    [theme.breakpoints.down("md")]: {
+      fontSize: ".8rem",
     },
-    '&:hover': {
+    "&:hover": {
       background: "#dcb500",
-    }
+    },
   },
   drawer: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       width: drawerWidth,
       flexShrink: 0,
     },
   },
-  bar:{
-    [theme.breakpoints.up('md')]: {
-      display:'none',
-      color:"green"
-    }
+  bar: {
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+      color: "green",
+    },
   },
 
   app: {
     flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    
+    display: "flex",
+    flexDirection: "column",
   },
   main: {
     flex: 1,
-    padding: theme.spacing(0)
+    padding: theme.spacing(0),
   },
   footer: {
     padding: theme.spacing(2),
-    background: '#eaeff1',
+    background: "#eaeff1",
   },
-  navigation:{
-    justifyItems:'center',
-    display:"flex",
-    alignContent:"center"
-  }
+  navigation: {
+    justifyItems: "center",
+    display: "flex",
+    alignContent: "center",
+  },
 };
 
 function Paperbase(props) {
@@ -196,7 +198,11 @@ function Paperbase(props) {
       <div className={classes.root}>
         <CssBaseline />
         <nav className={classes.navigation}>
-          <AppBar position="sticky" className={classes.bar} onDrawerToggle={handleDrawerToggle} />
+          <AppBar
+            position="sticky"
+            className={classes.bar}
+            onDrawerToggle={handleDrawerToggle}
+          />
           <Hidden implementation="js">
             <LeftSideBar
               PaperProps={{ style: { width: drawerWidth } }}
@@ -208,7 +214,7 @@ function Paperbase(props) {
         </nav>
         <div className={classes.app}>
           <main className={classes.main}>
-            <Content/>
+            <Content />
           </main>
         </div>
       </div>
@@ -222,9 +228,8 @@ Paperbase.propTypes = {
 
 export default withStyles(styles)(Paperbase);
 
-
-
-         {/* <Hidden smUp implementation="js">
+{
+  /* <Hidden smUp implementation="js">
             <LeftSideBar
               PaperProps={{ style: { width: drawerWidth } }}
               variant="temporary"
@@ -234,4 +239,5 @@ export default withStyles(styles)(Paperbase);
           </Hidden>
           <Hidden xsDown implementation="css">
             <LeftSideBar PaperProps={{ style: { width: drawerWidth } }} />
-        </Hidden> */}
+        </Hidden> */
+}
