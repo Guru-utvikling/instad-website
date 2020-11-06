@@ -9,6 +9,7 @@ import submitSearch from '../../pages/api/apiCore'
 const useStyles = makeStyles((theme) => ({
   wrapper:{
       textAlign:'center',
+      color:"",
       display:"flex",
       alignItems:'center',
       justifyContent:'center',

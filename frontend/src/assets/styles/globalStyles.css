@@ -1,5 +1,4 @@
 html {
-
   box-sizing: border-box;
   font-weight: 400;
   font-style: normal;
@@ -8,7 +7,7 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit
+  box-sizing: inherit;
 }
 
 body {
@@ -21,7 +20,7 @@ body {
 button {
   padding: 0;
   cursor: pointer;
-  font-family: ''
+  font-family: "";
 }
 
 ul {
