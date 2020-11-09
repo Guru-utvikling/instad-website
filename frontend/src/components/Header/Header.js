@@ -27,6 +27,16 @@ let theme = createMuiTheme({
       fontSize: 26,
       letterSpacing: 0.5,
     },
+    h1:{
+      color: "white",
+      fontSize: "48px",
+      margin: 0,
+    },
+    h3:{
+      color:'#FEDB00',
+      fontWeight:700,
+      fontDecoration:'uppercase'
+    },
     p: {
       fontSize: 16,
     },

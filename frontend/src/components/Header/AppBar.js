@@ -1,20 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@material-ui/core/AppBar";
-import Grid from "@material-ui/core/Grid";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Toolbar from "@material-ui/core/Toolbar";
-import { withStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import { Link } from "gatsby";
-import clsx from "clsx";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import Logo from "../../../static/instad-logo.png";
+import React from "react"
+import PropTypes from "prop-types"
+import AppBar from "@material-ui/core/AppBar"
+import Grid from "@material-ui/core/Grid"
+import Hidden from "@material-ui/core/Hidden"
+import IconButton from "@material-ui/core/IconButton"
+import MenuIcon from "@material-ui/icons/Menu"
+import Toolbar from "@material-ui/core/Toolbar"
+import { withStyles } from "@material-ui/core/styles"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
+import ListItemText from "@material-ui/core/ListItemText"
+import { Link } from "gatsby"
+import clsx from "clsx"
+import AccountCircleIcon from "@material-ui/icons/AccountCircle"
+import Logo from "../../../static/instad-logo.png"
 
 const NavLinks = [
   {
@@ -28,7 +28,7 @@ const NavLinks = [
       { id: "Kontakt oss", slug: "kontakt-oss" },
     ],
   },
-];
+]
 
 const styles = (theme) => ({
   secondaryBar: {
@@ -84,27 +84,27 @@ const styles = (theme) => ({
       fontSize: "1rem",
     },
   },
-});
+})
 
 function Header(props) {
-  const url_LINK = "http://localhost:8000/";
-  const { classes, onDrawerToggle } = props;
+  const url_LINK = "http://localhost:8000/"
+  const { classes, onDrawerToggle } = props
 
   return (
     <>
-      <AppBar className={classes.appbar} position="sticky" elevation={0}>
+      <AppBar className={classes.appbar} position='sticky' elevation={0}>
         <Toolbar>
           <Grid
             className={classes.appbarSmall}
             container
             spacing={1}
-            justify="space-between"
+            justify='space-between'
           >
             <Hidden smUp>
-              <img height="67" width="60" src={Logo} />
+              <img height='67' width='60' src={Logo} />
             </Hidden>
             <Hidden xsDown>
-              <img height="107" width="100" src={Logo} />
+              <img height='107' width='100' src={Logo} />
             </Hidden>
             {/* <Hidden xsDown> 
             {NavLinks.map(({ id, children }) => (
@@ -132,14 +132,14 @@ function Header(props) {
                 </Hidden> */}
 
             <Hidden>
-              <Grid item className={classes.hamwrapper} alignContent="center">
-                <Link to="login" className={classes.loginWrapper}>
+              <Grid item className={classes.hamwrapper} alignContent='center'>
+                <Link to='login' className={classes.loginWrapper}>
                   <AccountCircleIcon className={classes.loginIcon} />
                   <p>Log in</p>
                 </Link>
                 <IconButton
-                  color="black"
-                  aria-label="open drawer"
+                  color='black'
+                  aria-label='open drawer'
                   onClick={onDrawerToggle}
                   className={classes.menuButton}
                 >
@@ -151,12 +151,12 @@ function Header(props) {
         </Toolbar>
       </AppBar>
     </>
-  );
+  )
 }
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
   onDrawerToggle: PropTypes.func.isRequired,
-};
+}
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(Header)

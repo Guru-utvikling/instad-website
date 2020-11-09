@@ -1,10 +1,10 @@
-import React from "react";
-import { Grid, Box, Button, Hidden } from "@material-ui/core/";
-import { makeStyles } from "@material-ui/core/styles";
-import ToolBackground from "../../../static/tool-bg.svg";
-import Buttons from "../Buttons/Buttons";
-import Image1 from "../../../static/image-1.png";
-import Image2 from "../../../static/image-2.png";
+import React from "react"
+import { Grid, Box, Button, Hidden } from "@material-ui/core/"
+import { makeStyles } from "@material-ui/core/styles"
+import ToolBackground from "../../../static/tool-bg.svg"
+import Buttons from "../Buttons/Buttons"
+import Image1 from "../../../static/image-1.png"
+import Image2 from "../../../static/image-2.png"
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -42,13 +42,13 @@ const useStyles = makeStyles((theme) => ({
   para: {
     fontSize: 16,
   },
-}));
+}))
 
 export default function VareTjenester() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <Box className={classes.wrapper}>
-      <Grid container component="section" className={classes.root}>
+      <Grid container component='section' className={classes.root}>
         <Hidden smDown>
           <Grid
             className={classes.innerImageWrapper}
@@ -58,11 +58,11 @@ export default function VareTjenester() {
             md={6}
             lg={6}
           >
-            <img height="338" width="484" src={Image1} />
+            <img height='338' width='484' src={Image1} />
             <Hidden mdDown>
               <img
-                height="409"
-                width="408"
+                height='409'
+                width='408'
                 className={classes.higherImage}
                 src={Image2}
               />
@@ -92,7 +92,7 @@ export default function VareTjenester() {
         </Grid>
       </Grid>
     </Box>
-  );
+  )
 }
 
 // Zmien kolory buttonow
