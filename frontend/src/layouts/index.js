@@ -1,13 +1,19 @@
 import React from "react"
-import { ThemeProvider, withStyles,useTheme } from "@material-ui/core/styles"
-import Header from "../components/Header/Header"
-import global from "../assets/styles/ThemeStyles"
 
-function MainLayout({ children }) {
+import Navigation from "../components/Navigation/Navigation"
+import Footer from "../components/Footer/Footer"
+
+const MainLayout = ({children}) =>{
   return (
-    <ThemeProvider >
+    <>
+      <Navigation />
       {children}
-    </ThemeProvider>
+      <Footer />
+    </>
   )
 }
-export default withStyles(global)(MainLayout);
+
+
+export default MainLayout
+/// Blog funkcje 
+///
