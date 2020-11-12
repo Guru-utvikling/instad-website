@@ -56,15 +56,15 @@ let theme = createMuiTheme({
 theme = {
   ...theme,
   overrides: {
+
     MuiListItemText: {
       primary: {
         fontSize: "5rem",
       },
     },
     MuiDrawer: {
-      paper: {
+
         backgroundColor: theme.palette.primary.instad,
-      },
     },
     MuiButton: {
       padding: "2rem",

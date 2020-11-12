@@ -7,28 +7,11 @@ import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
 import Toolbar from "@material-ui/core/Toolbar"
 import { withStyles } from "@material-ui/core/styles"
-import List from "@material-ui/core/List"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemIcon from "@material-ui/core/ListItemIcon"
-import ListItemText from "@material-ui/core/ListItemText"
 import { Link } from "gatsby"
-import clsx from "clsx"
 import AccountCircleIcon from "@material-ui/icons/AccountCircle"
 import Logo from "../../../static/instad-logo.png"
 
-const NavLinks = [
-  {
-    id: "Develop",
-    children: [
-      { id: "Om oss", active: true, slug: "om-oss" },
-      { id: "Tjenester", slug: "tjenester" },
-      { id: "Ledige stillinger ", slug: "ledige-stillinger" },
-      { id: "Events", slug: "events" },
-      { id: "Blogg", slug: "blogg" },
-      { id: "Kontakt oss", slug: "kontakt-oss" },
-    ],
-  },
-]
+
 
 const styles = (theme) => ({
   secondaryBar: {
