@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{"z/85":function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),o=t.n(a);e.default=function(){return o.a.createElement("div",null,o.a.createElement("h1",null,"Kontakt-oss"))}}}]);
+//# sourceMappingURL=component---src-pages-kontakt-oss-js-eaaa24c853b7506c8418.js.map

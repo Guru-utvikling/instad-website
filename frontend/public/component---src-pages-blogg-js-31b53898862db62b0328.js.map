@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/blogg.js"],"names":["Blogg"],"mappings":"2FAAA,gCAUeA,UARD,WACZ,OACE,6BACE","file":"component---src-pages-blogg-js-31b53898862db62b0328.js","sourcesContent":["import React from \"react\";\n\nconst Blogg = () => {\n  return (\n    <div>\n      <h1>Blogg</h1>\n    </div>\n  );\n};\n\nexport default Blogg;\n"],"sourceRoot":""}

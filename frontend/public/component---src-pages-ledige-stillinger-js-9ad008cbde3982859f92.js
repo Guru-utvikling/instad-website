@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{xW6u:function(e,n,t){"use strict";t.r(n);var i=t("q1tI"),l=t.n(i);n.default=function(){return l.a.createElement("div",null,l.a.createElement("h1",null,"Ledige Stillinger"))}}}]);
+//# sourceMappingURL=component---src-pages-ledige-stillinger-js-9ad008cbde3982859f92.js.map

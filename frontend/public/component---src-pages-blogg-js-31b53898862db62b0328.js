@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{Qjen:function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),l=t.n(a);e.default=function(){return l.a.createElement("div",null,l.a.createElement("h1",null,"Blogg"))}}}]);
+//# sourceMappingURL=component---src-pages-blogg-js-31b53898862db62b0328.js.map

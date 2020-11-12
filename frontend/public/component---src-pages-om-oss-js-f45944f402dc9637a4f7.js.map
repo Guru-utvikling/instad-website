@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/om-oss.js"],"names":["OmOss"],"mappings":"4FAAA,gCAUeA,UARD,WACZ,OACE,6BACE","file":"component---src-pages-om-oss-js-f45944f402dc9637a4f7.js","sourcesContent":["import React from \"react\";\n\nconst OmOss = () => {\n  return (\n    <div>\n      <h1>Om-oss</h1>\n    </div>\n  );\n};\n\nexport default OmOss;\n"],"sourceRoot":""}

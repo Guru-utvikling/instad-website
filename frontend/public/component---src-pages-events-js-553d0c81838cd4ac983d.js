@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{UV5A:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),o=t.n(a);n.default=function(){return o.a.createElement("div",null,o.a.createElement("h1",null,"Events Bojetrzo"))}}}]);
+//# sourceMappingURL=component---src-pages-events-js-553d0c81838cd4ac983d.js.map
